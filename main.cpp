@@ -76,9 +76,35 @@ int main() {
 				}
 			}
 		}else if (menuOption == 8){ // List all Triangles
-
+			cout << "Only Triangles" << endl;
+			for (Shape* shape: shapes)
+			{
+				Triangle* triangle = dynamic_cast<Triangle*>(shape);
+				if (triangle != nullptr)
+				{
+					cout << shape->ToString() << endl;
+					cout << "\tPerimeter:    " << shape->Perimeter() << endl;
+					cout << "\tArea:         " << shape->Area() << endl;
+					cout << "\tHypotenuse: " << triangle->Hypotenuse() << endl;
+					cout << "\tAngleAB: " << triangle->AngleAB() << endl;
+					cout << "\tAngleBC: " << triangle->AngleBC() << endl;
+					cout << "\tAngleBC: " << triangle->AngleBC() << endl;
+					cout << endl;
+				}
+			}
 		}else if (menuOption == 9){ // List all Rectangles
+			cout << "Only Rectangles" << endl;
+			for (Shape* shape: shapes)
+			{
+				//Rectangle does not have any uniqure methods
+				//so there is no point in using dynamic_cast
+				cout << shape->ToString() << endl;
+				cout << "\tPerimeter:    " << shape->Perimeter() << endl;
+				cout << "\tArea:         " << shape->Area() << endl;
 
+				cout << endl;
+
+			}
 		}else if (menuOption == 10){ // List all shapes
 			for (Shape* shape: shapes){
 				cout << shape->ToString() << endl;
