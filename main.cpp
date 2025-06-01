@@ -96,14 +96,16 @@ int main() {
 			cout << "Only Rectangles" << endl;
 			for (Shape* shape: shapes)
 			{
-				//Rectangle does not have any uniqure methods
-				//so there is no point in using dynamic_cast
-				cout << shape->ToString() << endl;
-				cout << "\tPerimeter:    " << shape->Perimeter() << endl;
-				cout << "\tArea:         " << shape->Area() << endl;
+				if (dynamic_cast<Rectangle*>(shape) != nullptr)
+				{
+					//Rectangle does not have any uniqure methods
 
-				cout << endl;
+					cout << shape->ToString() << endl;
+					cout << "\tPerimeter:    " << shape->Perimeter() << endl;
+					cout << "\tArea:         " << shape->Area() << endl;
 
+					cout << endl;
+				}
 			}
 		}else if (menuOption == 10){ // List all shapes
 			for (Shape* shape: shapes){
